@@ -3,7 +3,7 @@ id: T05
 title: Generate TS protobuf/gRPC code from cadence IDLs
 epic: cadence-typescript-client
 depends_on: [T01]
-status: pending
+status: done
 ---
 # T05 — Proto codegen
 
