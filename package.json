@@ -13,16 +13,16 @@
     "codegen": "node scripts/generate-proto.mjs"
   },
   "devDependencies": {
-    "@types/node": "^22.10.0",
-    "tsx": "^4.19.0",
-    "typescript": "^5.6.0",
-    "vitest": "^4.0.0",
+    "@types/node": "^26.5.1",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.0",
+    "vitest": "^5.0.0",
     "vitest-gwt": "^4.1.4"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.12.0",
-    "@grpc/proto-loader": "^0.7.13",
-    "ts-proto": "^2.6.0",
-    "uuid": "^11.0.0"
+    "@grpc/grpc-js": "^1.14.4",
+    "@grpc/proto-loader": "^0.8.1",
+    "ts-proto": "^2.12.3"
   }
 }
