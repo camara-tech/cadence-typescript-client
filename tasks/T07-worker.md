@@ -3,7 +3,7 @@ id: T07
 title: TS Worker — decision + activity task loops (red-green)
 epic: cadence-typescript-client
 depends_on: [T06]
-status: pending
+status: done
 ---
 # T07 — Worker
 

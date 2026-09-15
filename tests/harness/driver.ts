@@ -35,9 +35,7 @@ async function startGoDriver(): Promise<CadenceTestDriver> {
 
 async function startTsDriver(): Promise<CadenceTestDriver> {
   const { TsDriver } = await import('./ts-driver.js');
-  const driver = new TsDriver();
-  await driver.init?.();
-  return driver as CadenceTestDriver;
+  return new TsDriver();
 }
 
 /** Unique domain name for test isolation. */

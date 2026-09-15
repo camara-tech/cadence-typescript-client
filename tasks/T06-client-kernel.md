@@ -3,7 +3,7 @@ id: T06
 title: TS client kernel + WorkflowClient (red-green)
 epic: cadence-typescript-client
 depends_on: [T04, T05]
-status: pending
+status: done
 ---
 # T06 — Client kernel + WorkflowClient
 
