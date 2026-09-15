@@ -1,0 +1,28 @@
+{
+  "name": "cadence-typescript-client",
+  "version": "0.1.0",
+  "description": "Unofficial Cadence TypeScript client",
+  "type": "module",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "codegen": "node scripts/generate-proto.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.0.0",
+    "vitest-gwt": "^4.1.4"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.0",
+    "@grpc/proto-loader": "^0.7.13",
+    "ts-proto": "^2.6.0",
+    "uuid": "^11.0.0"
+  }
+}
