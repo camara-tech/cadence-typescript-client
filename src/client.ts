@@ -15,7 +15,12 @@ import {
   StartWorkflowExecutionResponse,
   WorkflowAPIClientImpl,
 } from './generated/uber/cadence/api/v1/service_workflow.js';
-import { DomainAPIClientImpl, RegisterDomainRequest } from './generated/uber/cadence/api/v1/service_domain.js';
+import {
+  DeleteDomainRequest,
+  DeprecateDomainRequest,
+  DomainAPIClientImpl,
+  RegisterDomainRequest,
+} from './generated/uber/cadence/api/v1/service_domain.js';
 import {
   ListClosedWorkflowExecutionsRequest,
   ListOpenWorkflowExecutionsRequest,
@@ -192,6 +197,28 @@ export class WorkflowClient {
         throw err;
       }
     }
+  }
+
+  /**
+   * Deprecates a domain, preventing new workflow executions while existing
+   * executions may continue. Before deprecating, confirm the domain is ready
+   * to stop accepting work. If it will be deleted, first verify there are no
+   * open workflows or remaining workflow history.
+   */
+  async deprecateDomain(name: string): Promise<void> {
+    const request: DeprecateDomainRequest = { securityToken: '', name };
+    await this.domainApi.DeprecateDomain(request);
+  }
+
+  /**
+   * Permanently deletes a domain. Before calling, confirm it is deprecated,
+   * has no open workflows, and has no remaining workflow history as supported
+   * by the server. Preconditions are not checked by this client; deletion is
+   * irreversible and server behavior may vary by version.
+   */
+  async deleteDomain(name: string): Promise<void> {
+    const request: DeleteDomainRequest = { securityToken: '', name };
+    await this.domainApi.DeleteDomain(request);
   }
 
   async startWorkflow(
